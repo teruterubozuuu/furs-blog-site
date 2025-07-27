@@ -29,7 +29,7 @@
             </div>
             <ul class="flex items-center gap-x-6 text-sm font-medium">
                 <li><a href="{{ url('/signin') }}" class="hover:underline">Sign In</a></li>
-                <li class="bg-[#2e7d32] px-8 py-2 rounded-full text-white font-semibold hover:bg-[#284e2a] transition-all ease-in cursor-pointer"><a href="{{ url('/signup') }}">Sign Up</a></li>
+                <li><a href="{{ url('/signup') }}" class="bg-[#2e7d32] px-8 py-2 rounded-full text-white font-semibold hover:bg-[#284e2a] transition-all ease-in cursor-pointer">Sign Up</a></li>
             </ul>
         </nav>
     </header>
