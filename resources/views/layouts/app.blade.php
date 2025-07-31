@@ -27,10 +27,9 @@
             <div>
                 <img src="{{ asset('assets/logo_furs.png') }}" alt="Logo" class="h-10">
             </div>
-            <ul class="flex items-center gap-x-6 text-sm font-medium">
-                <li><a href="{{ url('/signin') }}" class="hover:underline">Sign In</a></li>
-                <li><a href="{{ url('/signup') }}" class="bg-[#2e7d32] px-8 py-2 rounded-full text-white font-semibold hover:bg-[#284e2a] transition-all ease-in cursor-pointer">Sign Up</a></li>
-            </ul>
+            <div class="flex items-center gap-x-6 text-sm font-medium">
+                <a href="{{ url('/addpost') }}" class="bg-[#2e7d32] px-8 py-2 rounded-full text-white font-semibold hover:bg-[#284e2a] transition-all ease-in cursor-pointer">Post</a>
+</div>
         </nav>
     </header>
     <div>

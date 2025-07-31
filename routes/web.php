@@ -14,10 +14,6 @@ Route::get('/donation',function(){
     return view('donation');
 });
 
-Route::get('/signin', function () {
-    return view('signin');
-});
-
-Route::get('/signup', function () {
-    return view('signup');
+Route::get('/addpost', function () {
+    return view('addpost');
 });
