@@ -15,12 +15,13 @@ class Post extends Model
 
     protected $fillable = [
         'title',
-        'content',
-        'status',
-        'publication_date'
+        'body',
+        'slug',
+        'publication_date',
+        'last_modified_date',
     ];
 
-    public function users(): BelongsTo
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id');
     }
