@@ -39,7 +39,6 @@ class PostFactory extends Factory
         $adjective = $this->faker->randomElement($adjectives);
         $situation = $this->faker->randomElement($situations);
 
-        // Determine proper article ("a" or "an")
         $article = in_array(strtolower($adjective[0]), ['a', 'e', 'i', 'o', 'u']) ? 'an' : 'a';
 
         $title = $isStray
