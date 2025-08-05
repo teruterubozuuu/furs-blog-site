@@ -4,7 +4,6 @@
 
 @section('content')
 
-    {{-- Toast message (centered at top, Tailwind-styled, auto-dismiss) --}}
     @if (session('success'))
         <div id="toast-message" class="fixed top-5 left-1/2 transform -translate-x-1/2 z-50 bg-green-100 border border-green-400 text-green-800 px-4 py-2 rounded-lg shadow-md text-sm">
             {{ session('success') }}
@@ -21,7 +20,6 @@
         @endforeach
     </div>
 
-    {{-- Auto-hide the toast after 3 seconds --}}
     <script>
         setTimeout(() => {
             const toast = document.getElementById('toast-message');
