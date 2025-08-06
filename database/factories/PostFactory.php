@@ -54,6 +54,4 @@ class PostFactory extends Factory
             'content' => $content,
             'created_at' => Carbon::now('Asia/Manila'),
             'updated_at' => Carbon::now('Asia/Manila'),
-        ];
-    }
 }
