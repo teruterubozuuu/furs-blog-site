@@ -5,12 +5,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>F.U.R.S</title>
+
+    <link rel="icon" href="{{ asset('assets/favicon.ico') }}" type="image/x-icon">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <!--- Icons --->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
     <!-- Styles -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -27,10 +32,9 @@
             <div>
                 <img src="{{ asset('assets/logo_furs.png') }}" alt="Logo" class="h-10">
             </div>
-            <ul class="flex items-center gap-x-6 text-sm font-medium">
-                <li><a href="{{ url('/signin') }}" class="hover:underline">Sign In</a></li>
-                <li class="bg-[#2e7d32] px-8 py-2 rounded-full text-white font-semibold hover:bg-[#284e2a] transition-all ease-in cursor-pointer"><a href="{{ url('/signup') }}">Sign Up</a></li>
-            </ul>
+            <div class="flex items-center gap-x-6 text-sm font-medium">
+                <a href="{{ url('/addpost') }}" class="bg-[#2e7d32] px-8 py-2 rounded-full text-white font-semibold hover:bg-[#284e2a] transition-all ease-in cursor-pointer">Post</a>
+</div>
         </nav>
     </header>
     <div>
