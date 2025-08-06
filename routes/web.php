@@ -5,9 +5,7 @@ use App\Http\Controllers\PostController;
 
 Route::get('/', [PostController::class, 'index'])->name('home');
 
-Route::get('/devlog', function () {
-    return view('devlog');
-});
+Route::get('/devlog', [PostController::class, 'devlog'])->name('devlog');
 
 Route::get('/donation', function () {
     return view('donation');

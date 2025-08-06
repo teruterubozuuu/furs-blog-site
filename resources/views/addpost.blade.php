@@ -16,13 +16,18 @@
             @csrf
             <h1 class="text-center font-bold text-[#2e7d32] text-xl">Create a post</h1>
 
+            <select name="post_type" class="rounded-full border border-[#356338] p-1 text-[#356338] focus:outline-none cursor-pointer">
+                <option value="home">Home</option>
+                <option value="devlog">Devlog</option>
+            </select>
+
             <div class="mb-4">
-                <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
+                <label for="title" class="block text-sm font-medium text-gray-600">Title</label>
                 <input type="text" name="title" id="title" required class="mt-1 p-1 block w-full rounded-sm bg-gray-200 shadow-sm focus:outline-none">
             </div>
 
             <div class="mb-4">
-                <label for="content" class="block text-sm font-medium text-gray-700">Content</label>
+                <label for="content" class="block text-sm font-medium text-gray-600">Content</label>
                 <textarea name="content" id="content" required class="h-70 max-h-100 mt-1 p-1 block w-full rounded-sm bg-gray-200 shadow-sm focus:outline-none" placeholder="Write something..."></textarea>
             </div>
 

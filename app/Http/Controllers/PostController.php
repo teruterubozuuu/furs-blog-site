@@ -7,12 +7,17 @@ use App\Models\Post;
 
 class PostController extends Controller
 {
-    // Show all posts on homepage
-    public function index()
-    {
-        $posts = Post::latest()->get();
-        return view('home', compact('posts'));
-    }
+public function index() {
+    // Show only 'home' posts on homepage
+    $posts = Post::where('post_type', 'home')->latest()->get();
+    return view('home', compact('posts'));
+}
+
+public function devlog() {
+    // Show only 'devlog' posts on devlog page
+    $posts = Post::where('post_type', 'devlog')->latest()->get();
+    return view('devlog', compact('posts'));
+}
 
     // Show add post form
     public function create()
@@ -21,18 +26,18 @@ class PostController extends Controller
     }
 
     // Handle post creation
-    public function store(Request $request)
-    {
-        $validated = $request->validate([
-            'title' => 'required|string|max:255',
-            'content' => 'required|string',
-        ]);
+   public function store(Request $request)
+{
+    $validated = $request->validate([
+        'title' => 'required|string|max:255',
+        'content' => 'required|string',
+        'post_type' => 'required|in:home,devlog', // validate the dropdown
+    ]);
 
-        Post::create($validated);
+    Post::create($validated); // saves title, content, and post_type
 
-        // Redirect to home page after creating post
-        return redirect()->route('home')->with('success', 'Post created successfully!');
-    }
+    return redirect()->route('home')->with('success', 'Post created successfully!');
+}
 
     public function edit(Post $post)
     {
