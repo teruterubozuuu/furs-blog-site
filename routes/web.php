@@ -15,3 +15,6 @@ Route::get('/donation', function () {
 
 Route::get('/addpost', [PostController::class, 'create'])->name('addpost');
 Route::post('/addpost', [PostController::class, 'store'])->name('addpost.submit');
+Route::get('/{post}/edit', [PostController::class, 'edit'])->name('editpost');
+Route::put('/{post}', [PostController::class, 'update'])->name('posts.update');
+Route::delete('/{post}', [PostController::class, 'destroy'])->name('deletepost');

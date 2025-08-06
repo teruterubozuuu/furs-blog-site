@@ -16,7 +16,21 @@
                 <p class="font-semibold text-lg">{{ $post->title }}</p>
                 <p class="text-gray-700">{{ $post->content }}</p>
                 <p class="text-sm text-gray-500">Created at: {{ $post->created_at->format('M d, Y h:i A') }}</p>
+
+                <!-- Buttons -->
+    <div class="flex justify-between items-center pt-2 border-t mt-2">
+        <a href="{{ route('editpost', $post) }}" class="text-blue-500 hover:underline text-sm">Edit</a>
+
+<form action="{{ route('deletepost', $post) }}" method="POST" onsubmit="return confirm('Are you sure?')">
+    @csrf
+    @method('DELETE')
+    <button type="submit" class="text-red-500 hover:underline text-sm">Delete</button>
+</form>
+
+    </div>
             </div>
+
+
         @endforeach
     </div>
 

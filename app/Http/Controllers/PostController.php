@@ -33,4 +33,30 @@ class PostController extends Controller
         // Redirect to home page after creating post
         return redirect()->route('home')->with('success', 'Post created successfully!');
     }
+
+    public function edit(Post $post)
+    {
+        return view('editpost', compact('post'));
+    }
+
+    // Handle update
+    public function update(Request $request, Post $post)
+    {
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'content' => 'required|string',
+        ]);
+
+        $post->update($validated);
+
+        return redirect()->route('home')->with('success', 'Post updated successfully!');
+    }
+
+    // Handle delete
+    public function destroy(Post $post)
+    {
+        $post->delete();
+
+        return redirect()->route('home')->with('success', 'Post deleted successfully!');
+    }
 }
